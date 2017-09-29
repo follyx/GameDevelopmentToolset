@@ -1,0 +1,100 @@
+# Dialog script for sop_terrain_texture_rop automatically generated
+
+{
+    name	sop_terrain_texture_rop
+    script	sop_terrain_texture_rop
+    label	"GameDev Terrain Texture ROP"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    parm {
+	name	"vm_uvunwrapres"
+	label	"Render Resolution"
+	type	intvector2
+	size	2
+	default	{ "2048" "2048" }
+	range	{ -1 1 }
+	parmtag	{ "autoscope" "0000000000000000" }
+    }
+    groupsimple {
+	name	"folder0"
+	label	"Normal Map"
+
+	parm {
+	    name	"vm_bake_tangentnormalflipy"
+	    label	"Tangent Normal Flip Y"
+	    type	toggle
+	    default	{ "off" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "spare_category" "Baking" }
+	}
+	parm {
+	    name	"vm_bake_tangentnormalflipx"
+	    label	"Tangent Normal Flip X"
+	    type	toggle
+	    default	{ "off" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "spare_category" "Baking" }
+	}
+	parm {
+	    name	"vm_bake_usemikkt"
+	    label	"Use MikkT Tangent Space"
+	    type	toggle
+	    default	{ "off" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "mantra_class" "renderer" }
+	    parmtag	{ "mantra_name" "bake_usemikkt" }
+	    parmtag	{ "spare_category" "Baking" }
+	}
+	parm {
+	    name	"copoutput2"
+	    label	"Output File"
+	    type	image
+	    default	{ "$HIP/render/Terrain_N.tga" }
+	    menureplace	{
+		[ "opmenu -l cop2net1/rop_comp1 copoutput" ]
+	    }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "filechooser_mode" "write" }
+	}
+    }
+
+    groupsimple {
+	name	"folder1"
+	label	"Height Map"
+
+	parm {
+	    name	"copoutput"
+	    label	"Output File"
+	    type	image
+	    default	{ "$HIP/render/Terrain_H.tga" }
+	    menureplace	{
+		[ "opmenu -l cop2net1/rop_comp2 copoutput" ]
+	    }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "filechooser_mode" "write" }
+	}
+    }
+
+    groupsimple {
+	name	"folder2"
+	label	"Output"
+
+	parm {
+	    name	"execute"
+	    label	"Export"
+	    type	button
+	    default	{ "0" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "takecontrol" "always" }
+	}
+    }
+
+}

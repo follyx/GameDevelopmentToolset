@@ -1,0 +1,186 @@
+# Dialog script for sop_terrain_segment_rop automatically generated
+
+{
+    name	sop_terrain_segment_rop
+    script	sop_terrain_segment_rop
+    label	"GameDev Terrain Mesh ROP"
+
+    help {
+	""
+    }
+
+    inputlabel	1	"Sub-Network Input #1"
+    inputlabel	2	"Sub-Network Input #2"
+    inputlabel	3	"Sub-Network Input #3"
+    inputlabel	4	"Sub-Network Input #4"
+
+    groupsimple {
+	name	"folder2"
+	label	"Segmenting"
+
+	parm {
+	    name	"tilecount"
+	    label	"Tile Count"
+	    type	intvector2
+	    size	2
+	    default	{ "4" "4" }
+	    range	{ 1! 10 }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"voxelpad"
+	    label	"Voxel Padding"
+	    type	integer
+	    default	{ "1" }
+	    range	{ 0 10 }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    groupsimple {
+	name	"folder1"
+	label	"Meshing"
+
+	parm {
+	    name	"layer"
+	    label	"Height Layer"
+	    type	string
+	    default	{ "height" }
+	    menureplace	{
+		[ "opmenu -l convertheightfield1 layer" ]
+	    }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"conversion"
+	    label	"Convert to"
+	    type	ordinal
+	    default	{ "poly" }
+	    menu	{
+		"poly"	"Polygon"
+		"polysoup"	"Polygon Soup"
+		"vdb"	"VDB"
+	    }
+	    range	{ 0! 10 }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"surftype"
+	    label	"Connectivity"
+	    type	ordinal
+	    default	{ "quads" }
+	    disablewhen	"{ conversion == vdb }"
+	    menu	{
+		"rows"	"Rows"
+		"cols"	"Columns"
+		"rowcol"	"Rows and Columns"
+		"triangles"	"Triangles"
+		"quads"	"Quadrilaterals"
+		"alttriangles"	"Alternating Triangles"
+		"revtriangles"	"Reverse Triangles"
+	    }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"lod"
+	    label	"Density"
+	    type	float
+	    default	{ "1" }
+	    range	{ 0.001! 5 }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"bakecd"
+	    label	"Bake Point Colors"
+	    type	toggle
+	    default	{ "off" }
+	    disablewhen	"{ conversion == vdb }"
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    groupsimple {
+	name	"folder0"
+	label	"Extrusion"
+
+	parm {
+	    name	"doextrude"
+	    label	"Extrude Base"
+	    type	toggle
+	    default	{ "off" }
+	    disablewhen	"{ conversion == vdb }"
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"depth"
+	    label	"Depth"
+	    type	float
+	    default	{ "-1" }
+	    disablewhen	"{ doextrude == 0 conversion != vdb }"
+	    range	{ -10 0 }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"basenormal"
+	    label	"Base Normal"
+	    type	vector
+	    size	3
+	    default	{ "0" "1" "0" }
+	    disablewhen	"{ doextrude == 0 conversion != vdb }"
+	    range	{ -1 1 }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"flat"
+	    label	"Flatten Base"
+	    type	toggle
+	    default	{ "on" }
+	    disablewhen	"{ depth == 0 } { doextrude == 0 conversion != vdb }"
+	    range	{ 0 1 }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+    }
+
+    groupsimple {
+	name	"folder3"
+	label	"Output"
+
+	parm {
+	    name	"sopoutput"
+	    label	"Output File"
+	    type	file
+	    default	{ "$HIP/geo/TerrainChunk" }
+	    menureplace	{
+		[ "opmenu -l rop_geometry1 sopoutput" ]
+	    }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	    parmtag	{ "filechooser_mode" "write" }
+	}
+	parm {
+	    name	"exportkind"
+	    label	"Export in ASCII Format"
+	    type	toggle
+	    default	{ "on" }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"sdkversion"
+	    label	"FBX SDK Version"
+	    type	string
+	    default	{ "" }
+	    menu	{
+		[ "opmenu -l OUT/filmboxfbx1 sdkversion" ]
+	    }
+	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"parm"
+	    label	"Export"
+	    type	button
+	    default	{ "0" }
+	    parmtag	{ "script_callback" "hou.node('foreach_end1').cook(force=True)" }
+	    parmtag	{ "script_callback_language" "python" }
+	}
+    }
+
+}
