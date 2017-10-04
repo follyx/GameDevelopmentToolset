@@ -90,6 +90,12 @@
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
+	    name	"bZeroOneUVs"
+	    label	"0-1 UV per segment"
+	    type	toggle
+	    default	{ "0" }
+	}
+	parm {
 	    name	"bakecd"
 	    label	"Bake Point Colors"
 	    type	toggle
