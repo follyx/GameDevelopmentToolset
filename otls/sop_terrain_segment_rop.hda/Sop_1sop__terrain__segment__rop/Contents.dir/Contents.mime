@@ -32,24 +32,24 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -23.4043 -80.2673
+position -25.0388 -76.6754
 connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on
+flags =  lock off model off template on footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
 {
 }
 inputsNamed3
 {
-0 	heightfield_noise7 1 1 "input1"
+0 	OUT_TERRAIN_F 1 1 "input1"
 }
 inputs
 {
-0 	heightfield_noise7 0 1
+0 	OUT_TERRAIN_F 0 1
 }
 stat
 {
-  create 1507163854
-  modify 1507163948
+  create 1507164734
+  modify 1507164822
   author admin@DESKTOP-PINH
   access 0777
 }
@@ -65,7 +65,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"0.4"
+		"value":"0.5"
 	}
 }
 
@@ -205,7 +205,7 @@ inputs
 stat
 {
   create 1506576886
-  modify 1507163005
+  modify 1507164751
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -533,7 +533,7 @@ inputs
 stat
 {
   create 1506557737
-  modify 1507163005
+  modify 1507164751
   author admin@DESKTOP-PINH
   access 0777
 }
@@ -604,16 +604,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	heightfield_tilesplit3 1 1 "input1"
+0 	(0) "" 1 "input1"
 }
 inputs
 {
-0 	heightfield_tilesplit3 0 1
+0 	(0) 0 1
 }
 stat
 {
   create 1506576886
-  modify 1507163228
+  modify 1507164793
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -710,7 +710,7 @@ version 0.8
 layer	[ 0	locks=0 ]	(	[ layer	height ] 	)
 conversion	[ 0	locks=0 ]	(	[ conversion	0 ] 	)
 surftype	[ 0	locks=0 ]	(	[ surftype	4 ] 	)
-lod	[ 0	locks=0 ]	(	[ lod	1 ] 	)
+lod	[ 0	locks=0 ]	(	[ lod	0.10000000000000001 ] 	)
 bakecd	[ 0	locks=0 ]	(	[ bakecd	0 ] 	)
 folder0	[ 0	locks=0 ]	(	0	)
 doextrude	[ 0	locks=0 ]	(	[ doextrude	0 ] 	)
@@ -1842,7 +1842,7 @@ inputs
 stat
 {
   create 1506573542
-  modify 1507163005
+  modify 1507164751
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -1922,7 +1922,7 @@ inputs
 stat
 {
   create 1506573586
-  modify 1507163005
+  modify 1507164751
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -2002,7 +2002,7 @@ inputs
 stat
 {
   create 1506577073
-  modify 1507163005
+  modify 1507164751
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -2061,7 +2061,7 @@ inputs
 stat
 {
   create 1506574653
-  modify 1507163818
+  modify 1507164781
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -2225,7 +2225,7 @@ inputs
 stat
 {
   create 1507157997
-  modify 1507163005
+  modify 1507164751
   author admin@DESKTOP-PINH
   access 0777
 }
@@ -2352,7 +2352,7 @@ inputs
 stat
 {
   create 1507163389
-  modify 1507163865
+  modify 1507164697
   author admin@DESKTOP-PINH
   access 0777
 }

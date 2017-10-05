@@ -184,7 +184,7 @@
 	    label	"Export"
 	    type	button
 	    default	{ "0" }
-	    parmtag	{ "script_callback" "hou.node('null3').cook(force=True)" }
+	    parmtag	{ "script_callback" "hou.node('python3').cook(force=True)" }
 	    parmtag	{ "script_callback_language" "python" }
 	}
     }
