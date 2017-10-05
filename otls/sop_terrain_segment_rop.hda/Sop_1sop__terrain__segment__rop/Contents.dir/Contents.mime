@@ -32,7 +32,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -15.8184 -74.6282
+position -23.4043 -80.2673
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -40,16 +40,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	OUT_TERRAIN_F 1 1 "input1"
+0 	heightfield_noise7 1 1 "input1"
 }
 inputs
 {
-0 	OUT_TERRAIN_F 0 1
+0 	heightfield_noise7 0 1
 }
 stat
 {
-  create 1507140750
-  modify 1507162477
+  create 1507163854
+  modify 1507163948
   author admin@DESKTOP-PINH
   access 0777
 }
@@ -65,7 +65,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"0.3"
+		"value":"0.4"
 	}
 }
 
@@ -157,9 +157,9 @@ Content-Type: text/plain
 {
 version 0.8
 orient	[ 0	locks=0 ]	(	"auto"	)
-tilecount	[ 0	locks=0 ]	(	[ tilecountx	2 ] 	[ tilecounty	2 ] 	)
+tilecount	[ 0	locks=0 ]	(	[ tilecountx	4 ] 	[ tilecounty	4 ] 	)
 extracttile	[ 0	locks=0 ]	(	"on"	)
-tilenum	[ 0	locks=0 ]	(	[ tilenum	4 ] 	)
+tilenum	[ 0	locks=0 ]	(	[ tilenum	16 ] 	)
 voxelpad	[ 8	locks=0 ]	(	[ voxelpad	1 ] 	)
 }
 
@@ -205,7 +205,7 @@ inputs
 stat
 {
   create 1506576886
-  modify 1507162340
+  modify 1507163005
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -302,8 +302,8 @@ version 0.8
 layer	[ 0	locks=0 ]	(	[ layer	height ] 	)
 conversion	[ 0	locks=0 ]	(	[ conversion	0 ] 	)
 surftype	[ 0	locks=0 ]	(	[ surftype	4 ] 	)
-lod	[ 0	locks=0 ]	(	[ lod	0.10000000000000001 ] 	)
-bakecd	[ 0	locks=0 ]	(	[ bakecd	1 ] 	)
+lod	[ 0	locks=0 ]	(	[ lod	1 ] 	)
+bakecd	[ 0	locks=0 ]	(	[ bakecd	0 ] 	)
 folder0	[ 0	locks=0 ]	(	0	)
 doextrude	[ 0	locks=0 ]	(	[ doextrude	0 ] 	)
 depth	[ 0	locks=0 ]	(	[ depth	-1 ] 	)
@@ -533,7 +533,7 @@ inputs
 stat
 {
   create 1506557737
-  modify 1507162336
+  modify 1507163005
   author admin@DESKTOP-PINH
   access 0777
 }
@@ -595,7 +595,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -4.02343 1.4626
+position -3.08235 1.4626
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -604,16 +604,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	(0) "" 1 "input1"
+0 	heightfield_tilesplit3 1 1 "input1"
 }
 inputs
 {
-0 	(0) 0 1
+0 	heightfield_tilesplit3 0 1
 }
 stat
 {
   create 1506576886
-  modify 1507161578
+  modify 1507163228
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -710,8 +710,8 @@ version 0.8
 layer	[ 0	locks=0 ]	(	[ layer	height ] 	)
 conversion	[ 0	locks=0 ]	(	[ conversion	0 ] 	)
 surftype	[ 0	locks=0 ]	(	[ surftype	4 ] 	)
-lod	[ 0	locks=0 ]	(	[ lod	0.10000000000000001 ] 	)
-bakecd	[ 0	locks=0 ]	(	[ bakecd	1 ] 	)
+lod	[ 0	locks=0 ]	(	[ lod	1 ] 	)
+bakecd	[ 0	locks=0 ]	(	[ bakecd	0 ] 	)
 folder0	[ 0	locks=0 ]	(	0	)
 doextrude	[ 0	locks=0 ]	(	[ doextrude	0 ] 	)
 depth	[ 0	locks=0 ]	(	[ depth	-1 ] 	)
@@ -743,9 +743,9 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -4.02343 -3.65745
+position -3.08235 -5.53653
 connectornextid 1
-flags =  lock off model off template on footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault off exposed on
+flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault off exposed on
 outputsNamed3
 {
 }
@@ -760,7 +760,7 @@ inputs
 stat
 {
   create 1506559772
-  modify 1507162481
+  modify 1507163632
   author admin@DESKTOP-PINH
   access 0777
 }
@@ -1842,7 +1842,7 @@ inputs
 stat
 {
   create 1506573542
-  modify 1506577849
+  modify 1507163005
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -1922,7 +1922,7 @@ inputs
 stat
 {
   create 1506573586
-  modify 1506577155
+  modify 1507163005
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -1984,7 +1984,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -7.04393e-09 -3.44383
+position -3.46638e-09 -3.44383
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -2002,7 +2002,7 @@ inputs
 stat
 {
   create 1506577073
-  modify 1507162481
+  modify 1507163005
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -2045,8 +2045,8 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -7.04393e-09 -4.84531
-connectornextid 2
+position -3.46638e-09 -5.62923
+connectornextid 0
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
 {
@@ -2054,16 +2054,14 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	null1 1 1 "input1"
 }
 inputs
 {
-0 	null1 0 1
 }
 stat
 {
   create 1506574653
-  modify 1507162469
+  modify 1507163818
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -2091,20 +2089,34 @@ Content-Type: text/plain
     }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/python3.chn"
+Content-Type: text/plain
+
+{
+    channel parm {
+      lefttype = extend
+      righttype = extend
+      default = 16
+      flags = 0
+      segment { length = 0 value = 16 16 expr = ch(\"../fIteration\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/python3.parm"
 Content-Type: text/plain
 
 {
 version 0.8
 python	[ 0	locks=0 ]	(	"for x in range(`chs(\"../tilecountx\")` * `chs(\"../tilecounty\")`):
-    node = hou.pwd().parm(\"parm\").set(x+1) 
+    node = hou.node(\"../.\").parm(\"fIteration\").set(x+1) 
     hou.node('../OUT/filmboxfbx1').parm('execute').pressButton()
 
 
 
 
 "	)
-parm	[ 0	locks=0 ]	(	4	)
+parm	[ 8	locks=0 ]	(	[ parm	16 ] 	)
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -2131,7 +2143,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -4.02343 -2.65745
+position -3.08235 -4.53653
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -2149,7 +2161,7 @@ inputs
 stat
 {
   create 1506579490
-  modify 1507158696
+  modify 1507163220
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -2213,7 +2225,7 @@ inputs
 stat
 {
   create 1507157997
-  modify 1507162375
+  modify 1507163005
   author admin@DESKTOP-PINH
   access 0777
 }
@@ -2259,7 +2271,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -4.02343 0.51444
+position -3.08235 0.4626
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -2277,7 +2289,7 @@ inputs
 stat
 {
   create 1507157997
-  modify 1507159858
+  modify 1507163228
   author admin@DESKTOP-PINH
   access 0777
 }
@@ -2311,10 +2323,70 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/null3.init"
+Content-Type: text/plain
+
+type = null
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/null3.def"
+Content-Type: text/plain
+
+sopflags sopflags = 
+comment ""
+position -3.46638e-09 -6.73193
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	python3 1 1 "input1"
+}
+inputs
+{
+0 	python3 0 1
+}
+stat
+{
+  create 1507163389
+  modify 1507163865
+  author admin@DESKTOP-PINH
+  access 0777
+}
+color UT_Color RGB 0.6 0.7 0.77 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/null3.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+copyinput	[ 0	locks=0 ]	(	"on"	)
+cacheinput	[ 0	locks=0 ]	(	"off"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/null3.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.0.736"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.order"
 Content-Type: text/plain
 
-14
+15
 VIS
 OUT
 OUT_GEO
@@ -2329,6 +2401,7 @@ attribwrangle2
 attribwrangle3
 convertheightfield3
 normal3
+null3
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"
