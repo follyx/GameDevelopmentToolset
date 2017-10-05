@@ -27,14 +27,6 @@
 	    range	{ 1! 10 }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
-	parm {
-	    name	"voxelpad"
-	    label	"Voxel Padding"
-	    type	integer
-	    default	{ "1" }
-	    range	{ 0 10 }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
     }
 
     groupsimple {
@@ -52,41 +44,11 @@
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
-	    name	"conversion"
-	    label	"Convert to"
-	    type	ordinal
-	    default	{ "poly" }
-	    menu	{
-		"poly"	"Polygon"
-		"polysoup"	"Polygon Soup"
-		"vdb"	"VDB"
-	    }
-	    range	{ 0! 10 }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"surftype"
-	    label	"Connectivity"
-	    type	ordinal
-	    default	{ "quads" }
-	    disablewhen	"{ conversion == vdb }"
-	    menu	{
-		"rows"	"Rows"
-		"cols"	"Columns"
-		"rowcol"	"Rows and Columns"
-		"triangles"	"Triangles"
-		"quads"	"Quadrilaterals"
-		"alttriangles"	"Alternating Triangles"
-		"revtriangles"	"Reverse Triangles"
-	    }
-	    parmtag	{ "autoscope" "0000000000000000" }
-	}
-	parm {
-	    name	"lod"
-	    label	"Density"
+	    name	"rows"
+	    label	"Tile Density"
 	    type	float
 	    default	{ "1" }
-	    range	{ 0.001! 5 }
+	    range	{ 0.001! 1 }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
 	parm {
@@ -94,14 +56,6 @@
 	    label	"0-1 UV per segment"
 	    type	toggle
 	    default	{ "0" }
-	}
-	parm {
-	    name	"bakecd"
-	    label	"Bake Point Colors"
-	    type	toggle
-	    default	{ "off" }
-	    disablewhen	"{ conversion == vdb }"
-	    parmtag	{ "autoscope" "0000000000000000" }
 	}
     }
 
@@ -122,7 +76,7 @@
 	    label	"Depth"
 	    type	float
 	    default	{ "-1" }
-	    disablewhen	"{ doextrude == 0 conversion != vdb }"
+	    disablewhen	"{ doextrude == 0 }"
 	    range	{ -10 0 }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
@@ -132,7 +86,7 @@
 	    type	vector
 	    size	3
 	    default	{ "0" "1" "0" }
-	    disablewhen	"{ doextrude == 0 conversion != vdb }"
+	    disablewhen	"{ doextrude == 0 }"
 	    range	{ -1 1 }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
@@ -141,7 +95,7 @@
 	    label	"Flatten Base"
 	    type	toggle
 	    default	{ "on" }
-	    disablewhen	"{ depth == 0 } { doextrude == 0 conversion != vdb }"
+	    disablewhen	"{ depth == 0 } { doextrude == 0 }"
 	    range	{ 0 1 }
 	    parmtag	{ "autoscope" "0000000000000000" }
 	}
