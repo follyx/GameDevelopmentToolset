@@ -172,6 +172,21 @@
 	label	"Output"
 
 	parm {
+	    name	"bDivideTiles"
+	    label	"Divide into tiled maps"
+	    type	toggle
+	    default	{ "0" }
+	}
+	parm {
+	    name	"iNumTiles"
+	    label	"Number of Tiles"
+	    type	intvector2
+	    size	2
+	    default	{ "4" "4" }
+	    disablewhen	"{ bDivideTiles == 0 }"
+	    range	{ -1 1 }
+	}
+	parm {
 	    name	"vm_uvunwrapres"
 	    label	"Render Resolution"
 	    type	intvector2
@@ -179,6 +194,15 @@
 	    default	{ "2048" "2048" }
 	    range	{ -1 1 }
 	    parmtag	{ "autoscope" "0000000000000000" }
+	}
+	parm {
+	    name	"tile_offset"
+	    label	"TileOffset_Hidden"
+	    type	vector2
+	    invisible
+	    size	2
+	    default	{ "0" "0" }
+	    range	{ -1 1 }
 	}
 	parm {
 	    name	"sepparm"
@@ -196,4 +220,11 @@
 	}
     }
 
+    parm {
+	name	"sFileOutputName"
+	label	"OutputName_Hidden"
+	type	string
+	invisible
+	default	{ "" }
+    }
 }

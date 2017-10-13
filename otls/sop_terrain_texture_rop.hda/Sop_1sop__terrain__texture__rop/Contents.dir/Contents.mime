@@ -32,24 +32,24 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -2.32353 -2.32777
+position -2.35899 -2.85892
 connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
 {
 }
 inputsNamed3
 {
-0 	heightfield_terrace1 1 1 "input1"
+0 	heightfield_blur1 1 1 "input1"
 }
 inputs
 {
-0 	heightfield_terrace1 0 1
+0 	heightfield_blur1 0 1
 }
 stat
 {
-  create 1507260424
-  modify 1507261786
+  create 1507869387
+  modify 1507872208
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -65,7 +65,7 @@ Content-Type: text/plain
 {
 	"___Version___":{
 		"type":"string",
-		"value":"0.4"
+		"value":"0.3"
 	}
 }
 
@@ -74,7 +74,7 @@ Content-Disposition: attachment; filename="hdaroot.inp"
 Content-Type: text/plain
 
 1
-0 -2.7450182241182466 9.254458236468329 2 0 __NO_OWNER_NETWORK_BOX__ "FROMOUTPUT"
+0 -2.6264299888241291 5.9678700011742114 2 0 __NO_OWNER_NETWORK_BOX__ "FROMOUTPUT"
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/objnet1.init"
@@ -90,7 +90,7 @@ Content-Type: text/plain
 objflags objflags =  origin off
 pretransform UT_DMatrix4 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1
 comment ""
-position 2.60894 6.74775
+position 1.54276 5.93457
 connectornextid 0
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on selectable on
 outputsNamed3
@@ -105,7 +105,7 @@ inputs
 stat
 {
   create 1506657044
-  modify 1507261653
+  modify 1507872054
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -1788,7 +1788,7 @@ inputs
 stat
 {
   create 1506660693
-  modify 1506706010
+  modify 1507872127
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -1851,28 +1851,25 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -2.62943 4.91157
-connectornextid 3
+position -0.794225 4.81227
+connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
 {
-2 "output1"
 }
 inputsNamed3
 {
-0 	attribwrangle8 2 1 "input1"
-1 	(__dot1) "" 1 "input2"
+0 	(0) "" 1 "input1"
 }
 inputs
 {
-0 	attribwrangle8 0 1
-1 	(__dot1) 0 1
+0 	(0) 0 1
 }
 stat
 {
-  create 1507233895
-  modify 1507261702
-  author admin@DESKTOP-PINH
+  create 1507871614
+  modify 1507872055
+  author paula@DESKTOP-JOVQSE4
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -1889,11 +1886,12 @@ version 0.8
 folder0	[ 0	locks=0 ]	(	0	0	)
 group	[ 0	locks=0 ]	(	""	)
 grouptype	[ 0	locks=0 ]	(	"guess"	)
-class	[ 0	locks=0 ]	(	"point"	)
+class	[ 0	locks=0 ]	(	"detail"	)
 vex_numcount	[ 0	locks=0 ]	(	10	)
 vex_threadjobsize	[ 0	locks=0 ]	(	1024	)
-snippet	[ 0	locks=0 ]	(	"float position = volumesample(1, 0, @P);
-@P = set(@P.x, position, @P.z);"	)
+snippet	[ 0	locks=0 ]	(	"vector volumeRes = volumeres(0, 0);
+i@resX = int(volumeRes.x);
+i@resZ = int(volumeRes.y);"	)
 exportlist	[ 0	locks=0 ]	(	*	)
 vex_strict	[ 0	locks=0 ]	(	"off"	)
 autobind	[ 0	locks=0 ]	(	"on"	)
@@ -1920,39 +1918,39 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/attribwrangle8.init"
+Content-Disposition: attachment; filename="hdaroot/attribwrangle10.init"
 Content-Type: text/plain
 
 type = attribwrangle
 matchesdef = 1
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/attribwrangle8.def"
+Content-Disposition: attachment; filename="hdaroot/attribwrangle10.def"
 Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -2.74802 6.02978
+position -4.06491 4.81227
 connectornextid 3
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
 {
-2 "output1"
+1 "output1"
 }
 inputsNamed3
 {
-0 	grid4 0 1 "input1"
-1 	(0) "" 1 "input2"
+0 	grid1 0 1 "input1"
+2 	(0) "" 1 "input2"
 }
 inputs
 {
-0 	grid4 0 1
+0 	grid1 0 1
 1 	(0) 0 1
 }
 stat
 {
-  create 1507236493
-  modify 1507261670
+  create 1507239395
+  modify 1507872059
   author admin@DESKTOP-PINH
   access 0777
 }
@@ -1962,7 +1960,7 @@ exprlanguage hscript
 end
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/attribwrangle8.parm"
+Content-Disposition: attachment; filename="hdaroot/attribwrangle10.parm"
 Content-Type: text/plain
 
 {
@@ -1990,7 +1988,7 @@ vex_selectiongroup	[ 0	locks=0 ]	(	""	)
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/attribwrangle8.userdata"
+Content-Disposition: attachment; filename="hdaroot/attribwrangle10.userdata"
 Content-Type: text/plain
 
 {
@@ -2001,39 +1999,40 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/attribwrangle2.init"
+Content-Disposition: attachment; filename="hdaroot/attribwrangle16.init"
 Content-Type: text/plain
 
 type = attribwrangle
 matchesdef = 1
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/attribwrangle2.def"
+Content-Disposition: attachment; filename="hdaroot/attribwrangle16.def"
 Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -4.85577 8.2181
-connectornextid 2
+position -2.62943 3.33413
+connectornextid 3
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
 {
+2 "output1"
 }
 inputsNamed3
 {
-0 	"" "" 1 "input1"
+0 	attribwrangle10 1 1 "input1"
 1 	(0) "" 1 "input2"
 }
 inputs
 {
-0 	"" 0 1
+0 	attribwrangle10 0 1
 1 	(0) 0 1
 }
 stat
 {
-  create 1507261415
-  modify 1507261688
-  author paula@DESKTOP-JOVQSE4
+  create 1507233895
+  modify 1507872051
+  author admin@DESKTOP-PINH
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -2042,7 +2041,7 @@ exprlanguage hscript
 end
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/attribwrangle2.parm"
+Content-Disposition: attachment; filename="hdaroot/attribwrangle16.parm"
 Content-Type: text/plain
 
 {
@@ -2050,12 +2049,11 @@ version 0.8
 folder0	[ 0	locks=0 ]	(	0	0	)
 group	[ 0	locks=0 ]	(	""	)
 grouptype	[ 0	locks=0 ]	(	"guess"	)
-class	[ 0	locks=0 ]	(	"detail"	)
+class	[ 0	locks=0 ]	(	"point"	)
 vex_numcount	[ 0	locks=0 ]	(	10	)
 vex_threadjobsize	[ 0	locks=0 ]	(	1024	)
-snippet	[ 0	locks=0 ]	(	"vector volumeRes = volumeres(1, 0);
-i@resX = int(volumeRes.x);
-i@resZ = int(volumeRes.y);"	)
+snippet	[ 0	locks=0 ]	(	"float position = volumesample(1, 0, @P);
+@P = set(@P.x, position, @P.z);"	)
 exportlist	[ 0	locks=0 ]	(	*	)
 vex_strict	[ 0	locks=0 ]	(	"off"	)
 autobind	[ 0	locks=0 ]	(	"on"	)
@@ -2071,7 +2069,7 @@ vex_selectiongroup	[ 0	locks=0 ]	(	""	)
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/attribwrangle2.userdata"
+Content-Disposition: attachment; filename="hdaroot/attribwrangle16.userdata"
 Content-Type: text/plain
 
 {
@@ -2093,7 +2091,7 @@ Content-Disposition: attachment; filename="hdaroot/ropnet1.def"
 Content-Type: text/plain
 
 comment ""
-position 2.60894 6.03078
+position 1.54276 5.2176
 connectornextid 0
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -2108,7 +2106,7 @@ inputs
 stat
 {
   create 1506656418
-  modify 1507261653
+  modify 1507872054
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -2195,7 +2193,7 @@ inputs
 stat
 {
   create 1506656903
-  modify 1507261717
+  modify 1507870615
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -3802,7 +3800,7 @@ vm_imageblur	[ 0	locks=0 ]	(	"on"	)
 objects4	[ 0	locks=0 ]	(	1	1	1	)
 vm_extractlinearplanes	[ 0	locks=0 ]	(	`propertys('vm_quickplane_Nt_channel','Nt')`,`propertys('vm_quickplane_Ds_channel','Ds')`,`propertys('vm_quickplane_Vd_channel','Vd')`,`propertys('vm_quickplane_Vdt_channel','Vdt')`,`propertys('vm_quickplane_Cv_channel','Cv')`,`propertys('vm_quickplane_Th_channel','Th')`,`propertys('vm_quickplane_Cu_channel','Cu')`,`propertys('vm_quickplane_N_channel','N')`,`propertys('vm_quickplane_P_channel','P')`	)
 vm_inlinestorage	[ 0	locks=0 ]	(	"off"	)
-vm_disable_plane1	[ 0	locks=0 ]	(	[ vm_disable_plane1	0 ] 	)
+vm_disable_plane1	[ 0	locks=0 ]	(	[ vm_disable_plane1	1 ] 	)
 vm_excludedcm_plane1	[ 0	locks=0 ]	(	"off"	)
 vm_variable_plane1	[ 0	locks=0 ]	(	Cv	)
 vm_vextype_plane1	[ 0	locks=0 ]	(	vector	)
@@ -3820,7 +3818,7 @@ vm_componentexport1	[ 0	locks=0 ]	(	"off"	)
 vm_lightexport1	[ 0	locks=0 ]	(	0	)
 vm_lightexport_scope1	[ 0	locks=0 ]	(	*	)
 vm_lightexport_select1	[ 0	locks=0 ]	(	*	)
-vm_disable_plane2	[ 0	locks=0	autoscope=0 ]	(	[ vm_disable_plane2	0 ] 	)
+vm_disable_plane2	[ 0	locks=0	autoscope=0 ]	(	[ vm_disable_plane2	1 ] 	)
 vm_excludedcm_plane2	[ 0	locks=0	autoscope=0 ]	(	"off"	)
 vm_variable_plane2	[ 0	locks=0	autoscope=0 ]	(	Ds	)
 vm_vextype_plane2	[ 0	locks=0	autoscope=0 ]	(	vector	)
@@ -3856,7 +3854,7 @@ vm_componentexport3	[ 0	locks=0	autoscope=0 ]	(	"off"	)
 vm_lightexport3	[ 0	locks=0	autoscope=0 ]	(	0	)
 vm_lightexport_scope3	[ 0	locks=0	autoscope=0 ]	(	*	)
 vm_lightexport_select3	[ 0	locks=0	autoscope=0 ]	(	*	)
-vm_disable_plane4	[ 0	locks=0 ]	(	[ vm_disable_plane4	0 ] 	)
+vm_disable_plane4	[ 0	locks=0 ]	(	[ vm_disable_plane4	1 ] 	)
 vm_excludedcm_plane4	[ 0	locks=0 ]	(	"off"	)
 vm_variable_plane4	[ 0	locks=0 ]	(	Oc	)
 vm_vextype_plane4	[ 0	locks=0 ]	(	vector	)
@@ -3915,7 +3913,7 @@ inputs
 stat
 {
   create 1506704155
-  modify 1506816585
+  modify 1507868671
   author admin@DESKTOP-PINH
   access 0777
 }
@@ -3970,25 +3968,63 @@ tpostframe	[ 0	locks=0 ]	(	"on"	)
 postframe	[ 0	locks=0 ]	(	""	)
 lpostframe	[ 0	locks=0 ]	(	hscript	)
 tpostrender	[ 0	locks=0 ]	(	"on"	)
-postrender	[ 0	locks=0 ]	(	"# Normal
+postrender	[ 0	locks=0 ]	(	"def makeXYName(a_filename, counter):
+    d=\".\"
+    fileNameList = [e+d for e in a_filename.split(d) if e]
+    #fileNameList.insert(len(fileNameList)-1,\"x%s_y%s.\" % (x,y))
+    fileNameList.insert(len(fileNameList)-1,\"%s.\" % (counter))
+    return \"\".join(fileNameList)[:-1]
+
+def ExportTiles(a_ropNode, a_fileName):
+
+    ntilesx = max(`chs(\"../../iNumTilesx\")`,1)
+    ntilesy = max(`chs(\"../../iNumTilesy\")`,1)
+    filename = a_fileName
+    counter = 1
+    for y in range(0, ntilesy):
+        for x in range(0, ntilesx):
+            hou.node('../../').parm(\"tile_offsetx\").set(float(x)/float(ntilesx))
+            hou.node('../../').parm(\"tile_offsety\").set(float(y)/float(ntilesy))
+            tileFileName = filename
+            tileFileName = makeXYName(filename, counter)
+            hou.node('../../').parm(\"sFileOutputName\").set(tileFileName)
+            #hou.node(a_ropNode).parm(\"copoutput\").set(tileFileName)
+            hou.node(a_ropNode).parm('execute').pressButton()
+            counter += 1
+
+
+
+# Normal
 if `ch('../../bExportNormal')`:
-    hou.node('../../cop2net1/file1/').parm('reload').pressButton()
-    hou.node('../../cop2net1/rop_comp1/').render()
+    if not `ch(\"../../bDivideTiles\")`:
+        hou.node('../../cop2net1/file1/').parm('reload').pressButton()
+        hou.node('../../cop2net1/rop_comp1/').render()
+    else:
+        ExportTiles('../../cop2net1/rop_comp1_tiled/', hou.node('../../').parm(\"copoutput2\").evalAsString())
 
 # Height
 if `ch('../../bExportHeight')`:
-    hou.node('../../cop2net1/file2/').parm('reload').pressButton()
-    hou.node('../../cop2net1/rop_comp2/').render()
+    if not `ch(\"../../bDivideTiles\")`:
+        hou.node('../../cop2net1/file2/').parm('reload').pressButton()
+        hou.node('../../cop2net1/rop_comp2/').render()
+    else:
+        ExportTiles('../../cop2net1/rop_comp2_tiled/', hou.node('../../').parm(\"copoutput\").evalAsString())
 
 # Cavity
 if `ch('../../bExportCavity')`:
-    hou.node('../../cop2net1/file3/').parm('reload').pressButton()
-    hou.node('../../cop2net1/rop_comp3/').render()
+    if not `ch(\"../../bDivideTiles\")`:
+        hou.node('../../cop2net1/file3/').parm('reload').pressButton()
+        hou.node('../../cop2net1/rop_comp3/').render()
+    else:
+        ExportTiles('../../cop2net1/rop_comp3_tiled/', hou.node('../../').parm(\"copoutput3\").evalAsString())
 
 # Occlusion
 if `ch('../../bExportOcclusion')`:
-    hou.node('../../cop2net1/file4/').parm('reload').pressButton()
-    hou.node('../../cop2net1/rop_comp4/').render()"	)
+    if not `ch(\"../../bDivideTiles\")`:
+        hou.node('../../cop2net1/file4/').parm('reload').pressButton()
+        hou.node('../../cop2net1/rop_comp4/').render()
+    else:
+        ExportTiles('../../cop2net1/rop_comp4_tiled/', hou.node('../../').parm(\"copoutput4\").evalAsString())"	)
 lpostrender	[ 0	locks=0 ]	(	python	)
 }
 
@@ -4280,7 +4316,7 @@ inputs
 stat
 {
   create 1506660168
-  modify 1506663543
+  modify 1507872123
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -4350,7 +4386,7 @@ inputs
 stat
 {
   create 1506660201
-  modify 1506663543
+  modify 1507872125
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -4427,7 +4463,7 @@ inputs
 stat
 {
   create 1506660212
-  modify 1506706008
+  modify 1507872125
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -4485,7 +4521,7 @@ inputs
 stat
 {
   create 1506660588
-  modify 1506706006
+  modify 1507872120
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -5483,7 +5519,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position 2.60894 5.32321
+position 1.54276 4.51003
 connectornextid 0
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -5498,7 +5534,7 @@ inputs
 stat
 {
   create 1506661208
-  modify 1507261653
+  modify 1507872054
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -5558,16 +5594,16 @@ Content-Type: text/plain
 {
 	color := "UT_Color RGB 0.52 0.52 0.52 ";
 	autofit := 0;
-	height := 7.7164883435863336;
-	width := 2.1000000119209288;
+	height := 10.312863690829015;
+	width := 4.6331834268419225;
 	comment := "Normal Map";
-	y_position := -2.4390800059604647;
+	y_position := -5.0354553532031474;
 	minimized := 0;
-	x_position := -2.4690557632225012;
+	x_position := -9.5585900248781215;
 }
 {
   create 1506661986
-  modify 1507260981
+  modify 1507872170
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -5581,16 +5617,16 @@ Content-Type: text/plain
 {
 	color := "UT_Color RGB 0.52 0.52 0.52 ";
 	autofit := 0;
-	height := 21.700486092507056;
-	width := 3.7493357333862245;
+	height := 23.484657164240769;
+	width := 6.5627717902048879;
 	comment := "Height Map";
-	y_position := -16.423077754881188;
+	y_position := -18.207248826614901;
 	minimized := 0;
-	x_position := 0.3345762395699734;
+	x_position := -4.0244924797527748;
 }
 {
   create 1506662084
-  modify 1507261158
+  modify 1507872178
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -5604,16 +5640,16 @@ Content-Type: text/plain
 {
 	color := "UT_Color RGB 0.52 0.52 0.52 ";
 	autofit := 0;
-	height := 6.2660894817669561;
-	width := 2.2618170915712605;
+	height := 8.2395010960787936;
+	width := 4.9713564858265942;
 	comment := "Cavity Map";
-	y_position := -0.98868114414108987;
+	y_position := -2.9620927584529237;
 	minimized := 0;
-	x_position := 4.6568773344524628;
+	x_position := 3.4033988296334057;
 }
 {
   create 1506662084
-  modify 1507261166
+  modify 1507872169
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -5627,16 +5663,16 @@ Content-Type: text/plain
 {
 	color := "UT_Color RGB 0.52 0.52 0.52 ";
 	autofit := 0;
-	height := 6.2660894817669561;
-	width := 2.2190702003550609;
+	height := 7.8183185622453362;
+	width := 5.6399824201555457;
 	comment := "Occlusion Map";
-	y_position := -0.98868114414108987;
+	y_position := -2.5409102246194677;
 	minimized := 0;
-	x_position := 7.5014128048579369;
+	x_position := 9.7298190356473668;
 }
 {
   create 1506754757
-  modify 1507261174
+  modify 1507872169
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -5653,7 +5689,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/file1.def"
 Content-Type: text/plain
 
 comment ""
-position -1.76906 4.77701
+position -6.32541 4.77701
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault off exposed on
 outputsNamed3
@@ -5669,7 +5705,7 @@ inputs
 stat
 {
   create 1506661216
-  modify 1507261733
+  modify 1507869690
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -5767,7 +5803,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/file1.cop2"
 Content-Type: text/plain
 
 2
-127
+256
 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -5782,7 +5818,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/normalized.def"
 Content-Type: text/plain
 
 comment ""
-position -1.76906 2.57403
+position -6.32541 2.62661
 connectornextid 2
 flags =  lock off model off template on footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault off exposed on
 outputsNamed3
@@ -5800,7 +5836,7 @@ inputs
 stat
 {
   create 1496799606
-  modify 1507260894
+  modify 1507869226
   author Luiz@Luiz-PC
   access 0777
 }
@@ -5883,7 +5919,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp1.def"
 Content-Type: text/plain
 
 comment ""
-position -1.76906 -1.72637
+position -6.32541 -4.37794
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -5900,7 +5936,7 @@ inputs
 stat
 {
   create 1506661294
-  modify 1507261207
+  modify 1507869222
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -5935,11 +5971,11 @@ trange	[ 0	locks=0 ]	(	"off"	)
 f	[ 0	locks=0 ]	(	1	1	1	)
 take	[ 0	locks=0 ]	(	_current_	)
 copswitcher	[ 0	locks=0 ]	(	0	0	0	0	0	)
-coppath	[ 0	locks=0 ]	(	../../cop2net1/flip1	)
+coppath	[ 0	locks=0 ]	(	../flip1	)
 tres	[ 0	locks=0 ]	(	"natural"	)
 res	[ 0	locks=0 ]	(	512	512	)
 resmenu	[ 0	locks=0 ]	(	0	)
-copoutput	[ 8	locks=0 ]	(	[ copoutput	C:/Users/paula/render/Terrain_N.tga ] 	)
+copoutput	[ 8	locks=0 ]	(	[ copoutput	D:/Projects/TerrainChunkers/render/Terrain_N.tga ] 	)
 mkpath	[ 0	locks=0 ]	(	"on"	)
 color	[ 0	locks=0 ]	(	C	)
 alpha	[ 0	locks=0 ]	(	A	)
@@ -6030,7 +6066,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/file2.def"
 Content-Type: text/plain
 
 comment ""
-position 0.734579 4.77701
+position -0.811054 4.77701
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault off exposed on
 outputsNamed3
@@ -6046,7 +6082,7 @@ inputs
 stat
 {
   create 1506661996
-  modify 1507261749
+  modify 1507865170
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -6144,7 +6180,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/file2.cop2"
 Content-Type: text/plain
 
 2
-342
+291
 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -6159,7 +6195,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp2.def"
 Content-Type: text/plain
 
 comment ""
-position 0.734579 -15.0136
+position -0.811054 -17.7469
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -6176,7 +6212,7 @@ inputs
 stat
 {
   create 1506662080
-  modify 1507261182
+  modify 1507869301
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -6215,7 +6251,7 @@ coppath	[ 0	locks=0 ]	(	../../cop2net1/flip2	)
 tres	[ 0	locks=0 ]	(	"natural"	)
 res	[ 0	locks=0 ]	(	512	512	)
 resmenu	[ 0	locks=0 ]	(	0	)
-copoutput	[ 8	locks=0 ]	(	[ copoutput	C:/Users/paula/render/Terrain_H.tga ] 	)
+copoutput	[ 8	locks=0 ]	(	[ copoutput	D:/Projects/TerrainChunkers/render/Terrain_H.tga ] 	)
 mkpath	[ 0	locks=0 ]	(	"on"	)
 color	[ 0	locks=0 ]	(	C	)
 alpha	[ 0	locks=0 ]	(	A	)
@@ -6306,7 +6342,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/equalize1.def"
 Content-Type: text/plain
 
 comment ""
-position 1.99484 2.57403
+position 0.449207 2.57403
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault on exposed on
 outputsNamed3
@@ -6324,7 +6360,7 @@ inputs
 stat
 {
   create 1506664303
-  modify 1506821335
+  modify 1507849369
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -6404,7 +6440,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/file3.def"
 Content-Type: text/plain
 
 comment ""
-position 5.05688 4.77701
+position 6.51294 4.77701
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault off exposed on
 outputsNamed3
@@ -6420,7 +6456,7 @@ inputs
 stat
 {
   create 1506661996
-  modify 1507261734
+  modify 1507865170
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -6518,7 +6554,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/file3.cop2"
 Content-Type: text/plain
 
 2
-99
+93
 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -6533,7 +6569,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp3.def"
 Content-Type: text/plain
 
 comment ""
-position 5.05688 -0.517171
+position 6.51294 -2.41203
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -6550,7 +6586,7 @@ inputs
 stat
 {
   create 1506753372
-  modify 1507261182
+  modify 1507869301
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -6666,9 +6702,9 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/file4.def"
 Content-Type: text/plain
 
 comment ""
-position 7.90142 4.77701
+position 13.6117 4.77701
 connectornextid 1
-flags =  lock off model off template off footprint off xray off bypass off display off render on highlight off unload off savedata off compress off colordefault off exposed on
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault off exposed on
 outputsNamed3
 {
 0 "output1"
@@ -6682,7 +6718,7 @@ inputs
 stat
 {
   create 1506754658
-  modify 1507261734
+  modify 1507865170
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -6780,7 +6816,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/file4.cop2"
 Content-Type: text/plain
 
 2
-30
+24
 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -6795,7 +6831,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp4.def"
 Content-Type: text/plain
 
 comment ""
-position 7.90142 -0.517171
+position 13.6117 -1.86388
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -6812,7 +6848,7 @@ inputs
 stat
 {
   create 1506754675
-  modify 1507261182
+  modify 1507869301
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -6851,7 +6887,7 @@ coppath	[ 0	locks=0 ]	(	../../cop2net1/flip4	)
 tres	[ 0	locks=0 ]	(	"natural"	)
 res	[ 0	locks=0 ]	(	512	512	)
 resmenu	[ 0	locks=0 ]	(	0	)
-copoutput	[ 0	locks=0 ]	(	[ copoutput	C:/Users/paula/render/Terrain_OC.tga ] 	)
+copoutput	[ 0	locks=0 ]	(	[ copoutput	D:/Projects/TerrainChunkers/render/Terrain_OC.tga ] 	)
 mkpath	[ 0	locks=0 ]	(	"on"	)
 color	[ 0	locks=0 ]	(	C	)
 alpha	[ 0	locks=0 ]	(	A	)
@@ -6942,7 +6978,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/equalize.def"
 Content-Type: text/plain
 
 comment ""
-position 0.734579 0.64108
+position -0.811054 0.64108
 connectornextid 3
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault off exposed on
 outputsNamed3
@@ -6962,7 +6998,7 @@ inputs
 stat
 {
   create 1506816644
-  modify 1506821161
+  modify 1507849369
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -7031,7 +7067,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/channelcopy1.def"
 Content-Type: text/plain
 
 comment ""
-position 1.99484 -1.28908
+position 0.449207 -1.28908
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault on exposed on
 outputsNamed3
@@ -7049,7 +7085,7 @@ inputs
 stat
 {
   create 1506819741
-  modify 1506819860
+  modify 1507849369
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -7115,7 +7151,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/delete1.def"
 Content-Type: text/plain
 
 comment ""
-position 1.99484 -3.43948
+position 0.449207 -3.43948
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault off exposed on
 outputsNamed3
@@ -7133,7 +7169,7 @@ inputs
 stat
 {
   create 1506819766
-  modify 1506819885
+  modify 1507849369
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -7190,7 +7226,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/single_channel.def"
 Content-Type: text/plain
 
 comment ""
-position 0.734579 -5.53797
+position -0.811054 -5.53797
 connectornextid 3
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault off exposed on
 outputsNamed3
@@ -7210,7 +7246,7 @@ inputs
 stat
 {
   create 1506819791
-  modify 1506821801
+  modify 1507849369
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -7279,7 +7315,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/8bit.def"
 Content-Type: text/plain
 
 comment ""
-position 0.734579 -8.2199
+position -0.811054 -8.2199
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -7297,7 +7333,7 @@ inputs
 stat
 {
   create 1474476099
-  modify 1506821813
+  modify 1507849369
   author malexander@ssmarie
   access 0777
 }
@@ -7355,7 +7391,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/16b.def"
 Content-Type: text/plain
 
 comment ""
-position 1.70924 -9.074
+position 0.163607 -9.074
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -7373,7 +7409,7 @@ inputs
 stat
 {
   create 1474476099
-  modify 1506821823
+  modify 1507849369
   author malexander@ssmarie
   access 0777
 }
@@ -7431,7 +7467,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/fp16.def"
 Content-Type: text/plain
 
 comment ""
-position 2.7819 -9.65728
+position 1.23627 -9.65728
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -7449,7 +7485,7 @@ inputs
 stat
 {
   create 1474476099
-  modify 1506821821
+  modify 1507849369
   author malexander@ssmarie
   access 0777
 }
@@ -7507,7 +7543,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/switch6.def"
 Content-Type: text/plain
 
 comment ""
-position 0.734579 -11.6948
+position -0.811054 -11.6948
 connectornextid 5
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault off exposed on
 outputsNamed3
@@ -7531,7 +7567,7 @@ inputs
 stat
 {
   create 1474476138
-  modify 1507180608
+  modify 1507849369
   author malexander@ssmarie
   access 0777
 }
@@ -7589,6 +7625,986 @@ Content-Type: text/plain
 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window1.init"
+Content-Type: text/plain
+
+type = window
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window1.def"
+Content-Type: text/plain
+
+comment ""
+position -9.29276 -2.37554
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render on highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+0 "output1"
+}
+inputsNamed3
+{
+1 	flip1 1 1 "input1"
+}
+inputs
+{
+0 	flip1 0 1
+}
+stat
+{
+  create 1474913975
+  modify 1507869222
+  author malexander@ssmarie
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window1.chn"
+Content-Type: text/plain
+
+{
+    channel harea2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = 1/ch(\"../../iNumTilesx\") }
+    }
+    channel varea2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = 1/ch(\"../../iNumTilesy\") }
+    }
+    channel offset1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -ch(\"../../tile_offsetx\") }
+    }
+    channel offset2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -ch(\"../../tile_offsety\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window1.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+stdswitcher	[ 0	locks=0 ]	(	0	)
+window	[ 0	locks=0 ]	(	"offsetsize"	)
+units	[ 0	locks=0 ]	(	"uv"	)
+harea	[ 8	locks=0 ]	(	0	[ harea2	0.5 ] 	)
+varea	[ 8	locks=0 ]	(	0	[ varea2	0.5 ] 	)
+offset	[ 8	locks=0 ]	(	[ offset1	-0.5 ] 	[ offset2	-0.5 ] 	)
+hold	[ 0	locks=0 ]	(	"on"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window1.netbox"
+Content-Type: text/plain
+
+__netbox1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window1.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.0.671"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window1.cop2"
+Content-Type: text/plain
+
+2
+0
+0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp1_tiled.init"
+Content-Type: text/plain
+
+type = rop_comp
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp1_tiled.def"
+Content-Type: text/plain
+
+comment ""
+position -9.29276 -4.37794
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	window1 0 1 "input1"
+}
+inputs
+{
+0 	window1 0 1
+}
+stat
+{
+  create 1506661294
+  modify 1507869222
+  author paula@DESKTOP-JOVQSE4
+  access 0777
+}
+color UT_Color RGB 0.65 0.4 0.5 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp1_tiled.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+execute	[ 0	locks=0 ]	(	0	)
+renderdialog	[ 0	locks=0 ]	(	0	)
+trange	[ 0	locks=0 ]	(	"off"	)
+f	[ 0	locks=0 ]	(	1	1	1	)
+take	[ 0	locks=0 ]	(	_current_	)
+copswitcher	[ 0	locks=0 ]	(	0	0	0	0	0	)
+coppath	[ 0	locks=0 ]	(	../window1	)
+tres	[ 0	locks=0 ]	(	"natural"	)
+res	[ 0	locks=0 ]	(	256	256	)
+resmenu	[ 0	locks=0 ]	(	0	)
+copoutput	[ 8	locks=0 ]	(	`chs(\"../../sFileOutputName\")`	)
+mkpath	[ 0	locks=0 ]	(	"on"	)
+color	[ 0	locks=0 ]	(	C	)
+alpha	[ 0	locks=0 ]	(	A	)
+scopeplanes	[ 0	locks=0 ]	(	C	)
+convertcolorspace	[ 0	locks=0 ]	(	"off"	)
+gamma	[ 0	locks=0 ]	(	1	)
+lut	[ 0	locks=0 ]	(	""	)
+framedepend	[ 0	locks=0 ]	(	"off"	)
+batchmode	[ 0	locks=0 ]	(	"off"	)
+batchsize	[ 0	locks=0 ]	(	2	)
+reloadfiles	[ 0	locks=0 ]	(	"on"	)
+outputarea	[ 0	locks=0 ]	(	"frame"	)
+pixelcrop	[ 0	locks=0 ]	(	0	0	255	255	)
+uvcrop	[ 0	locks=0 ]	(	0	0	1	1	)
+limitcanvaspixels	[ 0	locks=0 ]	(	"on"	)
+canvaspixels	[ 0	locks=0 ]	(	64	)
+limitcanvaspercent	[ 0	locks=0 ]	(	"off"	)
+canvaspercent	[ 0	locks=0 ]	(	10	)
+copaux1	[ 0	locks=0 ]	(	""	)
+color1	[ 0	locks=0 ]	(	C	)
+alpha1	[ 0	locks=0 ]	(	A	)
+scopeplanes1	[ 0	locks=0 ]	(	"C A"	)
+copaux2	[ 0	locks=0 ]	(	""	)
+color2	[ 0	locks=0 ]	(	C	)
+alpha2	[ 0	locks=0 ]	(	A	)
+scopeplanes2	[ 0	locks=0 ]	(	"C A"	)
+copaux3	[ 0	locks=0 ]	(	""	)
+color3	[ 0	locks=0 ]	(	C	)
+alpha3	[ 0	locks=0 ]	(	A	)
+scopeplanes3	[ 0	locks=0 ]	(	"C A"	)
+copaux4	[ 0	locks=0 ]	(	""	)
+color4	[ 0	locks=0 ]	(	C	)
+alpha4	[ 0	locks=0 ]	(	A	)
+scopeplanes4	[ 0	locks=0 ]	(	"C A"	)
+copaux5	[ 0	locks=0 ]	(	""	)
+color5	[ 0	locks=0 ]	(	C	)
+alpha5	[ 0	locks=0 ]	(	A	)
+scopeplanes5	[ 0	locks=0 ]	(	"C A"	)
+vm_image_artist	[ 0	locks=0 ]	(	""	)
+vm_image_comment	[ 0	locks=0 ]	(	""	)
+vm_image_hostname	[ 0	locks=0 ]	(	""	)
+vm_image_mplay_label	[ 0	locks=0 ]	(	""	)
+vm_image_mplay_gamma	[ 0	locks=0 ]	(	1	)
+vm_image_jpeg_quality	[ 0	locks=0 ]	(	100	)
+vm_image_tiff_compression	[ 0	locks=0 ]	(	"LZW"	)
+vm_image_exr_compression	[ 0	locks=0 ]	(	"piz"	)
+png_alpha_multiplication	[ 0	locks=0 ]	(	"premult"	)
+tprerender	[ 0	locks=0 ]	(	"on"	)
+prerender	[ 0	locks=0 ]	(	""	)
+lprerender	[ 0	locks=0 ]	(	hscript	)
+tpreframe	[ 0	locks=0 ]	(	"on"	)
+preframe	[ 0	locks=0 ]	(	""	)
+lpreframe	[ 0	locks=0 ]	(	hscript	)
+tpostframe	[ 0	locks=0 ]	(	"on"	)
+postframe	[ 0	locks=0 ]	(	""	)
+lpostframe	[ 0	locks=0 ]	(	hscript	)
+tpostrender	[ 0	locks=0 ]	(	"on"	)
+postrender	[ 0	locks=0 ]	(	""	)
+lpostrender	[ 0	locks=0 ]	(	python	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp1_tiled.netbox"
+Content-Type: text/plain
+
+__netbox1
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp1_tiled.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.0.671"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp2_tiled.init"
+Content-Type: text/plain
+
+type = rop_comp
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp2_tiled.def"
+Content-Type: text/plain
+
+comment ""
+position -3.73618 -17.7469
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	window3 0 1 "input1"
+}
+inputs
+{
+0 	window3 0 1
+}
+stat
+{
+  create 1506662080
+  modify 1507869247
+  author paula@DESKTOP-JOVQSE4
+  access 0777
+}
+color UT_Color RGB 0.65 0.4 0.5 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp2_tiled.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+execute	[ 0	locks=0 ]	(	0	)
+renderdialog	[ 0	locks=0 ]	(	0	)
+trange	[ 0	locks=0 ]	(	"off"	)
+f	[ 0	locks=0 ]	(	1	1	1	)
+take	[ 0	locks=0 ]	(	_current_	)
+copswitcher	[ 0	locks=0 ]	(	0	0	0	0	0	)
+coppath	[ 0	locks=0 ]	(	../../cop2net1/window3	)
+tres	[ 0	locks=0 ]	(	"natural"	)
+res	[ 0	locks=0 ]	(	128	128	)
+resmenu	[ 0	locks=0 ]	(	0	)
+copoutput	[ 8	locks=0 ]	(	`chs(\"../../sFileOutputName\")`	)
+mkpath	[ 0	locks=0 ]	(	"on"	)
+color	[ 0	locks=0 ]	(	C	)
+alpha	[ 0	locks=0 ]	(	A	)
+scopeplanes	[ 0	locks=0 ]	(	"C A"	)
+convertcolorspace	[ 0	locks=0 ]	(	"off"	)
+gamma	[ 0	locks=0 ]	(	1	)
+lut	[ 0	locks=0 ]	(	""	)
+framedepend	[ 0	locks=0 ]	(	"off"	)
+batchmode	[ 0	locks=0 ]	(	"off"	)
+batchsize	[ 0	locks=0 ]	(	2	)
+reloadfiles	[ 0	locks=0 ]	(	"on"	)
+outputarea	[ 0	locks=0 ]	(	"frame"	)
+pixelcrop	[ 0	locks=0 ]	(	0	0	127	127	)
+uvcrop	[ 0	locks=0 ]	(	0	0	1	1	)
+limitcanvaspixels	[ 0	locks=0 ]	(	"on"	)
+canvaspixels	[ 0	locks=0 ]	(	64	)
+limitcanvaspercent	[ 0	locks=0 ]	(	"off"	)
+canvaspercent	[ 0	locks=0 ]	(	10	)
+copaux1	[ 0	locks=0 ]	(	""	)
+color1	[ 0	locks=0 ]	(	C	)
+alpha1	[ 0	locks=0 ]	(	A	)
+scopeplanes1	[ 0	locks=0 ]	(	"C A"	)
+copaux2	[ 0	locks=0 ]	(	""	)
+color2	[ 0	locks=0 ]	(	C	)
+alpha2	[ 0	locks=0 ]	(	A	)
+scopeplanes2	[ 0	locks=0 ]	(	"C A"	)
+copaux3	[ 0	locks=0 ]	(	""	)
+color3	[ 0	locks=0 ]	(	C	)
+alpha3	[ 0	locks=0 ]	(	A	)
+scopeplanes3	[ 0	locks=0 ]	(	"C A"	)
+copaux4	[ 0	locks=0 ]	(	""	)
+color4	[ 0	locks=0 ]	(	C	)
+alpha4	[ 0	locks=0 ]	(	A	)
+scopeplanes4	[ 0	locks=0 ]	(	"C A"	)
+copaux5	[ 0	locks=0 ]	(	""	)
+color5	[ 0	locks=0 ]	(	C	)
+alpha5	[ 0	locks=0 ]	(	A	)
+scopeplanes5	[ 0	locks=0 ]	(	"C A"	)
+vm_image_artist	[ 0	locks=0 ]	(	""	)
+vm_image_comment	[ 0	locks=0 ]	(	""	)
+vm_image_hostname	[ 0	locks=0 ]	(	""	)
+vm_image_mplay_label	[ 0	locks=0 ]	(	""	)
+vm_image_mplay_gamma	[ 0	locks=0 ]	(	1	)
+vm_image_jpeg_quality	[ 0	locks=0 ]	(	100	)
+vm_image_tiff_compression	[ 0	locks=0 ]	(	"LZW"	)
+vm_image_exr_compression	[ 0	locks=0 ]	(	"piz"	)
+png_alpha_multiplication	[ 0	locks=0 ]	(	"premult"	)
+tprerender	[ 0	locks=0 ]	(	"on"	)
+prerender	[ 0	locks=0 ]	(	""	)
+lprerender	[ 0	locks=0 ]	(	hscript	)
+tpreframe	[ 0	locks=0 ]	(	"on"	)
+preframe	[ 0	locks=0 ]	(	""	)
+lpreframe	[ 0	locks=0 ]	(	hscript	)
+tpostframe	[ 0	locks=0 ]	(	"on"	)
+postframe	[ 0	locks=0 ]	(	""	)
+lpostframe	[ 0	locks=0 ]	(	hscript	)
+tpostrender	[ 0	locks=0 ]	(	"on"	)
+postrender	[ 0	locks=0 ]	(	""	)
+lpostrender	[ 0	locks=0 ]	(	hscript	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp2_tiled.netbox"
+Content-Type: text/plain
+
+__netbox2
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp2_tiled.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.0.671"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window3.init"
+Content-Type: text/plain
+
+type = window
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window3.def"
+Content-Type: text/plain
+
+comment ""
+position -3.73618 -15.3059
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+0 "output1"
+}
+inputsNamed3
+{
+1 	flip2 1 1 "input1"
+}
+inputs
+{
+0 	flip2 0 1
+}
+stat
+{
+  create 1474913975
+  modify 1507869247
+  author malexander@ssmarie
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window3.chn"
+Content-Type: text/plain
+
+{
+    channel harea2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = 1/ch(\"../../iNumTilesx\") }
+    }
+    channel varea2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = 1/ch(\"../../iNumTilesy\") }
+    }
+    channel offset1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -ch(\"../../tile_offsetx\") }
+    }
+    channel offset2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -ch(\"../../tile_offsety\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window3.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+stdswitcher	[ 0	locks=0 ]	(	0	)
+window	[ 0	locks=0 ]	(	"offsetsize"	)
+units	[ 0	locks=0 ]	(	"uv"	)
+harea	[ 8	locks=0 ]	(	0	[ harea2	0.5 ] 	)
+varea	[ 8	locks=0 ]	(	0	[ varea2	0.5 ] 	)
+offset	[ 8	locks=0 ]	(	[ offset1	-0.5 ] 	[ offset2	-0.5 ] 	)
+hold	[ 0	locks=0 ]	(	"on"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window3.netbox"
+Content-Type: text/plain
+
+__netbox2
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window3.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.0.671"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window3.cop2"
+Content-Type: text/plain
+
+2
+0
+0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp3_tiled.init"
+Content-Type: text/plain
+
+type = rop_comp
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp3_tiled.def"
+Content-Type: text/plain
+
+comment ""
+position 3.59645 -2.41203
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	window4 0 1 "input1"
+}
+inputs
+{
+0 	window4 0 1
+}
+stat
+{
+  create 1506662080
+  modify 1507869256
+  author paula@DESKTOP-JOVQSE4
+  access 0777
+}
+color UT_Color RGB 0.65 0.4 0.5 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp3_tiled.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+execute	[ 0	locks=0 ]	(	0	)
+renderdialog	[ 0	locks=0 ]	(	0	)
+trange	[ 0	locks=0 ]	(	"off"	)
+f	[ 0	locks=0 ]	(	1	1	1	)
+take	[ 0	locks=0 ]	(	_current_	)
+copswitcher	[ 0	locks=0 ]	(	0	0	0	0	0	)
+coppath	[ 0	locks=0 ]	(	../../cop2net1/window4	)
+tres	[ 0	locks=0 ]	(	"natural"	)
+res	[ 0	locks=0 ]	(	128	128	)
+resmenu	[ 0	locks=0 ]	(	0	)
+copoutput	[ 8	locks=0 ]	(	`chs(\"../../sFileOutputName\")`	)
+mkpath	[ 0	locks=0 ]	(	"on"	)
+color	[ 0	locks=0 ]	(	C	)
+alpha	[ 0	locks=0 ]	(	A	)
+scopeplanes	[ 0	locks=0 ]	(	"C A"	)
+convertcolorspace	[ 0	locks=0 ]	(	"off"	)
+gamma	[ 0	locks=0 ]	(	1	)
+lut	[ 0	locks=0 ]	(	""	)
+framedepend	[ 0	locks=0 ]	(	"off"	)
+batchmode	[ 0	locks=0 ]	(	"off"	)
+batchsize	[ 0	locks=0 ]	(	2	)
+reloadfiles	[ 0	locks=0 ]	(	"on"	)
+outputarea	[ 0	locks=0 ]	(	"frame"	)
+pixelcrop	[ 0	locks=0 ]	(	0	0	127	127	)
+uvcrop	[ 0	locks=0 ]	(	0	0	1	1	)
+limitcanvaspixels	[ 0	locks=0 ]	(	"on"	)
+canvaspixels	[ 0	locks=0 ]	(	64	)
+limitcanvaspercent	[ 0	locks=0 ]	(	"off"	)
+canvaspercent	[ 0	locks=0 ]	(	10	)
+copaux1	[ 0	locks=0 ]	(	""	)
+color1	[ 0	locks=0 ]	(	C	)
+alpha1	[ 0	locks=0 ]	(	A	)
+scopeplanes1	[ 0	locks=0 ]	(	"C A"	)
+copaux2	[ 0	locks=0 ]	(	""	)
+color2	[ 0	locks=0 ]	(	C	)
+alpha2	[ 0	locks=0 ]	(	A	)
+scopeplanes2	[ 0	locks=0 ]	(	"C A"	)
+copaux3	[ 0	locks=0 ]	(	""	)
+color3	[ 0	locks=0 ]	(	C	)
+alpha3	[ 0	locks=0 ]	(	A	)
+scopeplanes3	[ 0	locks=0 ]	(	"C A"	)
+copaux4	[ 0	locks=0 ]	(	""	)
+color4	[ 0	locks=0 ]	(	C	)
+alpha4	[ 0	locks=0 ]	(	A	)
+scopeplanes4	[ 0	locks=0 ]	(	"C A"	)
+copaux5	[ 0	locks=0 ]	(	""	)
+color5	[ 0	locks=0 ]	(	C	)
+alpha5	[ 0	locks=0 ]	(	A	)
+scopeplanes5	[ 0	locks=0 ]	(	"C A"	)
+vm_image_artist	[ 0	locks=0 ]	(	""	)
+vm_image_comment	[ 0	locks=0 ]	(	""	)
+vm_image_hostname	[ 0	locks=0 ]	(	""	)
+vm_image_mplay_label	[ 0	locks=0 ]	(	""	)
+vm_image_mplay_gamma	[ 0	locks=0 ]	(	1	)
+vm_image_jpeg_quality	[ 0	locks=0 ]	(	100	)
+vm_image_tiff_compression	[ 0	locks=0 ]	(	"LZW"	)
+vm_image_exr_compression	[ 0	locks=0 ]	(	"piz"	)
+png_alpha_multiplication	[ 0	locks=0 ]	(	"premult"	)
+tprerender	[ 0	locks=0 ]	(	"on"	)
+prerender	[ 0	locks=0 ]	(	""	)
+lprerender	[ 0	locks=0 ]	(	hscript	)
+tpreframe	[ 0	locks=0 ]	(	"on"	)
+preframe	[ 0	locks=0 ]	(	""	)
+lpreframe	[ 0	locks=0 ]	(	hscript	)
+tpostframe	[ 0	locks=0 ]	(	"on"	)
+postframe	[ 0	locks=0 ]	(	""	)
+lpostframe	[ 0	locks=0 ]	(	hscript	)
+tpostrender	[ 0	locks=0 ]	(	"on"	)
+postrender	[ 0	locks=0 ]	(	""	)
+lpostrender	[ 0	locks=0 ]	(	hscript	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp3_tiled.netbox"
+Content-Type: text/plain
+
+__netbox3
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp3_tiled.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.0.671"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window4.init"
+Content-Type: text/plain
+
+type = window
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window4.def"
+Content-Type: text/plain
+
+comment ""
+position 3.59645 0.0289693
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+0 "output1"
+}
+inputsNamed3
+{
+1 	flip3 1 1 "input1"
+}
+inputs
+{
+0 	flip3 0 1
+}
+stat
+{
+  create 1474913975
+  modify 1507869261
+  author malexander@ssmarie
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window4.chn"
+Content-Type: text/plain
+
+{
+    channel harea2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = 1/ch(\"../../iNumTilesx\") }
+    }
+    channel varea2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = 1/ch(\"../../iNumTilesy\") }
+    }
+    channel offset1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -ch(\"../../tile_offsetx\") }
+    }
+    channel offset2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -ch(\"../../tile_offsety\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window4.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+stdswitcher	[ 0	locks=0 ]	(	0	)
+window	[ 0	locks=0 ]	(	"offsetsize"	)
+units	[ 0	locks=0 ]	(	"uv"	)
+harea	[ 8	locks=0 ]	(	0	[ harea2	0.5 ] 	)
+varea	[ 8	locks=0 ]	(	0	[ varea2	0.5 ] 	)
+offset	[ 8	locks=0 ]	(	[ offset1	-0.5 ] 	[ offset2	-0.5 ] 	)
+hold	[ 0	locks=0 ]	(	"on"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window4.netbox"
+Content-Type: text/plain
+
+__netbox3
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window4.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.0.671"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window4.cop2"
+Content-Type: text/plain
+
+2
+0
+0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp4_tiled.init"
+Content-Type: text/plain
+
+type = rop_comp
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp4_tiled.def"
+Content-Type: text/plain
+
+comment ""
+position 10.4175 -1.86388
+connectornextid 1
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
+outputsNamed3
+{
+}
+inputsNamed3
+{
+0 	window5 0 1 "input1"
+}
+inputs
+{
+0 	window5 0 1
+}
+stat
+{
+  create 1506662080
+  modify 1507869287
+  author paula@DESKTOP-JOVQSE4
+  access 0777
+}
+color UT_Color RGB 0.65 0.4 0.5 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp4_tiled.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+execute	[ 0	locks=0 ]	(	0	)
+renderdialog	[ 0	locks=0 ]	(	0	)
+trange	[ 0	locks=0 ]	(	"off"	)
+f	[ 0	locks=0 ]	(	1	1	1	)
+take	[ 0	locks=0 ]	(	_current_	)
+copswitcher	[ 0	locks=0 ]	(	0	0	0	0	0	)
+coppath	[ 0	locks=0 ]	(	../../cop2net1/window5	)
+tres	[ 0	locks=0 ]	(	"natural"	)
+res	[ 0	locks=0 ]	(	256	256	)
+resmenu	[ 0	locks=0 ]	(	0	)
+copoutput	[ 8	locks=0 ]	(	`chs(\"../../sFileOutputName\")`	)
+mkpath	[ 0	locks=0 ]	(	"on"	)
+color	[ 0	locks=0 ]	(	C	)
+alpha	[ 0	locks=0 ]	(	A	)
+scopeplanes	[ 0	locks=0 ]	(	"C A"	)
+convertcolorspace	[ 0	locks=0 ]	(	"off"	)
+gamma	[ 0	locks=0 ]	(	1	)
+lut	[ 0	locks=0 ]	(	""	)
+framedepend	[ 0	locks=0 ]	(	"off"	)
+batchmode	[ 0	locks=0 ]	(	"off"	)
+batchsize	[ 0	locks=0 ]	(	2	)
+reloadfiles	[ 0	locks=0 ]	(	"on"	)
+outputarea	[ 0	locks=0 ]	(	"frame"	)
+pixelcrop	[ 0	locks=0 ]	(	0	0	255	255	)
+uvcrop	[ 0	locks=0 ]	(	0	0	1	1	)
+limitcanvaspixels	[ 0	locks=0 ]	(	"on"	)
+canvaspixels	[ 0	locks=0 ]	(	64	)
+limitcanvaspercent	[ 0	locks=0 ]	(	"off"	)
+canvaspercent	[ 0	locks=0 ]	(	10	)
+copaux1	[ 0	locks=0 ]	(	""	)
+color1	[ 0	locks=0 ]	(	C	)
+alpha1	[ 0	locks=0 ]	(	A	)
+scopeplanes1	[ 0	locks=0 ]	(	"C A"	)
+copaux2	[ 0	locks=0 ]	(	""	)
+color2	[ 0	locks=0 ]	(	C	)
+alpha2	[ 0	locks=0 ]	(	A	)
+scopeplanes2	[ 0	locks=0 ]	(	"C A"	)
+copaux3	[ 0	locks=0 ]	(	""	)
+color3	[ 0	locks=0 ]	(	C	)
+alpha3	[ 0	locks=0 ]	(	A	)
+scopeplanes3	[ 0	locks=0 ]	(	"C A"	)
+copaux4	[ 0	locks=0 ]	(	""	)
+color4	[ 0	locks=0 ]	(	C	)
+alpha4	[ 0	locks=0 ]	(	A	)
+scopeplanes4	[ 0	locks=0 ]	(	"C A"	)
+copaux5	[ 0	locks=0 ]	(	""	)
+color5	[ 0	locks=0 ]	(	C	)
+alpha5	[ 0	locks=0 ]	(	A	)
+scopeplanes5	[ 0	locks=0 ]	(	"C A"	)
+vm_image_artist	[ 0	locks=0 ]	(	""	)
+vm_image_comment	[ 0	locks=0 ]	(	""	)
+vm_image_hostname	[ 0	locks=0 ]	(	""	)
+vm_image_mplay_label	[ 0	locks=0 ]	(	""	)
+vm_image_mplay_gamma	[ 0	locks=0 ]	(	1	)
+vm_image_jpeg_quality	[ 0	locks=0 ]	(	100	)
+vm_image_tiff_compression	[ 0	locks=0 ]	(	"LZW"	)
+vm_image_exr_compression	[ 0	locks=0 ]	(	"piz"	)
+png_alpha_multiplication	[ 0	locks=0 ]	(	"premult"	)
+tprerender	[ 0	locks=0 ]	(	"on"	)
+prerender	[ 0	locks=0 ]	(	""	)
+lprerender	[ 0	locks=0 ]	(	hscript	)
+tpreframe	[ 0	locks=0 ]	(	"on"	)
+preframe	[ 0	locks=0 ]	(	""	)
+lpreframe	[ 0	locks=0 ]	(	hscript	)
+tpostframe	[ 0	locks=0 ]	(	"on"	)
+postframe	[ 0	locks=0 ]	(	""	)
+lpostframe	[ 0	locks=0 ]	(	hscript	)
+tpostrender	[ 0	locks=0 ]	(	"on"	)
+postrender	[ 0	locks=0 ]	(	""	)
+lpostrender	[ 0	locks=0 ]	(	hscript	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp4_tiled.netbox"
+Content-Type: text/plain
+
+__netbox4
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/rop_comp4_tiled.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.0.671"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window5.init"
+Content-Type: text/plain
+
+type = window
+matchesdef = 0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window5.def"
+Content-Type: text/plain
+
+comment ""
+position 10.4175 0.57712
+connectornextid 2
+flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress off colordefault on exposed on
+outputsNamed3
+{
+0 "output1"
+}
+inputsNamed3
+{
+1 	flip4 1 1 "input1"
+}
+inputs
+{
+0 	flip4 0 1
+}
+stat
+{
+  create 1474913975
+  modify 1507869282
+  author malexander@ssmarie
+  access 0777
+}
+color UT_Color RGB 0.8 0.8 0.8 
+delscript ""
+exprlanguage hscript
+end
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window5.chn"
+Content-Type: text/plain
+
+{
+    channel harea2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = 1/ch(\"../../iNumTilesx\") }
+    }
+    channel varea2 {
+      lefttype = extend
+      righttype = extend
+      default = 1
+      flags = 0
+      segment { length = 0 value = 1 1 expr = 1/ch(\"../../iNumTilesy\") }
+    }
+    channel offset1 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -ch(\"../../tile_offsetx\") }
+    }
+    channel offset2 {
+      lefttype = extend
+      righttype = extend
+      flags = 0
+      segment { length = 0 expr = -ch(\"../../tile_offsety\") }
+    }
+  }
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window5.parm"
+Content-Type: text/plain
+
+{
+version 0.8
+stdswitcher	[ 0	locks=0 ]	(	0	)
+window	[ 0	locks=0 ]	(	"offsetsize"	)
+units	[ 0	locks=0 ]	(	"uv"	)
+harea	[ 8	locks=0 ]	(	0	[ harea2	0.5 ] 	)
+varea	[ 8	locks=0 ]	(	0	[ varea2	0.5 ] 	)
+offset	[ 8	locks=0 ]	(	[ offset1	-0.5 ] 	[ offset2	-0.5 ] 	)
+hold	[ 0	locks=0 ]	(	"on"	)
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window5.netbox"
+Content-Type: text/plain
+
+__netbox4
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window5.userdata"
+Content-Type: text/plain
+
+{
+	"___Version___":{
+		"type":"string",
+		"value":"16.0.671"
+	}
+}
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
+Content-Disposition: attachment; filename="hdaroot/cop2net1/window5.cop2"
+Content-Type: text/plain
+
+2
+0
+0
+
+--HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot/cop2net1/flip1.init"
 Content-Type: text/plain
 
@@ -7600,7 +8616,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/flip1.def"
 Content-Type: text/plain
 
 comment ""
-position -1.76906 0.45204
+position -6.32541 0.47621
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off colordefault on exposed on
 outputsNamed3
@@ -7617,8 +8633,8 @@ inputs
 }
 stat
 {
-  create 1507260887
-  modify 1507261201
+  create 1507868682
+  modify 1507869226
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -7692,7 +8708,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/flip2.def"
 Content-Type: text/plain
 
 comment ""
-position 0.734579 -12.8636
+position -0.811054 -12.8452
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off colordefault on exposed on
 outputsNamed3
@@ -7709,8 +8725,8 @@ inputs
 }
 stat
 {
-  create 1507260887
-  modify 1507261159
+  create 1507868682
+  modify 1507869244
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -7784,7 +8800,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/flip3.def"
 Content-Type: text/plain
 
 comment ""
-position 5.05688 1.63283
+position 6.51294 2.62661
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off colordefault on exposed on
 outputsNamed3
@@ -7801,8 +8817,8 @@ inputs
 }
 stat
 {
-  create 1507260887
-  modify 1507261167
+  create 1507868682
+  modify 1507869264
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -7876,7 +8892,7 @@ Content-Disposition: attachment; filename="hdaroot/cop2net1/flip4.def"
 Content-Type: text/plain
 
 comment ""
-position 7.90142 1.63283
+position 13.6117 2.62661
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display on render off highlight off unload off savedata off compress off colordefault on exposed on
 outputsNamed3
@@ -7893,8 +8909,8 @@ inputs
 }
 stat
 {
-  create 1507260887
-  modify 1507261175
+  create 1507868682
+  modify 1507869276
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -7960,7 +8976,7 @@ Content-Type: text/plain
 Content-Disposition: attachment; filename="hdaroot/cop2net1.order"
 Content-Type: text/plain
 
-22
+30
 file1
 normalized
 rop_comp1
@@ -7979,6 +8995,14 @@ single_channel
 16b
 fp16
 switch6
+window1
+rop_comp1_tiled
+rop_comp2_tiled
+window3
+rop_comp3_tiled
+window4
+rop_comp4_tiled
+window5
 flip1
 flip2
 flip3
@@ -8003,7 +9027,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -2.62643 2.90127
+position -2.62643 1.29623
 connectornextid 1
 flags =  lock off model off template on footprint off xray off bypass off display on render on highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -8020,7 +9044,7 @@ inputs
 stat
 {
   create 1506662338
-  modify 1507261705
+  modify 1507872051
   author paula@DESKTOP-JOVQSE4
   access 0777
 }
@@ -8062,7 +9086,7 @@ Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -2.62643 3.90127
+position -2.62643 2.29623
 connectornextid 2
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -8071,16 +9095,16 @@ outputsNamed3
 }
 inputsNamed3
 {
-0 	attribwrangle1 2 1 "input1"
+0 	attribwrangle16 2 1 "input1"
 }
 inputs
 {
-0 	attribwrangle1 0 1
+0 	attribwrangle16 0 1
 }
 stat
 {
   create 1506705753
-  modify 1507261703
+  modify 1507872051
   author admin@DESKTOP-PINH
   access 0777
 }
@@ -8114,19 +9138,19 @@ Content-Type: text/plain
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/grid4.init"
+Content-Disposition: attachment; filename="hdaroot/grid1.init"
 Content-Type: text/plain
 
 type = grid
 matchesdef = 0
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/grid4.def"
+Content-Disposition: attachment; filename="hdaroot/grid1.def"
 Content-Type: text/plain
 
 sopflags sopflags = 
 comment ""
-position -4.85277 7.26688
+position -5.81618 5.93457
 connectornextid 1
 flags =  lock off model off template off footprint off xray off bypass off display off render off highlight off unload off savedata off compress on colordefault on exposed on
 outputsNamed3
@@ -8141,9 +9165,9 @@ inputs
 }
 stat
 {
-  create 1507233792
-  modify 1507261782
-  author admin@DESKTOP-PINH
+  create 1507871562
+  modify 1507872061
+  author paula@DESKTOP-JOVQSE4
   access 0777
 }
 color UT_Color RGB 0.8 0.8 0.8 
@@ -8152,28 +9176,28 @@ exprlanguage hscript
 end
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/grid4.chn"
+Content-Disposition: attachment; filename="hdaroot/grid1.chn"
 Content-Type: text/plain
 
 {
     channel rows {
       lefttype = extend
       righttype = extend
-      default = 2
+      default = 10
       flags = 0
-      segment { length = 0 value = 2 2 expr = "detail(\"../attribwrangle2\", \"resX\", 2)" }
+      segment { length = 0 value = 10 10 expr = "detail(\"../attribwrangle1/\", \"resX\",0)" }
     }
     channel cols {
       lefttype = extend
       righttype = extend
-      default = 2
+      default = 10
       flags = 0
-      segment { length = 0 value = 2 2 expr = "detail(\"../attribwrangle2\", \"resZ\", 2)" }
+      segment { length = 0 value = 10 10 expr = "detail(\"../attribwrangle1/\", \"resZ\",0)" }
     }
   }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/grid4.parm"
+Content-Disposition: attachment; filename="hdaroot/grid1.parm"
 Content-Type: text/plain
 
 {
@@ -8181,7 +9205,7 @@ version 0.8
 type	[ 0	locks=0 ]	(	"poly"	)
 surftype	[ 0	locks=0 ]	(	"quads"	)
 orient	[ 0	locks=0 ]	(	"zx"	)
-size	[ 8	locks=0 ]	(	1	1	)
+size	[ 0	locks=0 ]	(	1	1	)
 t	[ 0	locks=0 ]	(	0	0	0	)
 rows	[ 0	locks=0 ]	(	[ rows	500 ] 	)
 cols	[ 0	locks=0 ]	(	[ cols	500 ] 	)
@@ -8192,7 +9216,7 @@ interpv	[ 0	locks=0 ]	(	"on"	)
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/grid4.userdata"
+Content-Disposition: attachment; filename="hdaroot/grid1.userdata"
 Content-Type: text/plain
 
 {
@@ -8200,32 +9224,6 @@ Content-Type: text/plain
 		"type":"string",
 		"value":"16.0.671"
 	}
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/__dot1.networkdotinit"
-Content-Type: text/plain
-
-{
-	"version":1,
-	"posx":-0.0432707734204811345,
-	"posy":5.47320647654870029,
-	"pinned":false,
-	"color":"FROMOUTPUT",
-	"input":"(__dot2) 0 1"
-}
-
---HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
-Content-Disposition: attachment; filename="hdaroot/__dot2.networkdotinit"
-Content-Type: text/plain
-
-{
-	"version":1,
-	"posx":-0.0432707734204811414,
-	"posy":8.36910333296676612,
-	"pinned":false,
-	"color":"FROMOUTPUT",
-	"input":"(0) 0 1"
 }
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
@@ -8238,10 +9236,10 @@ objnet1
 cop2net1
 output1
 normal1
+grid1
 attribwrangle1
-attribwrangle8
-grid4
-attribwrangle2
+attribwrangle10
+attribwrangle16
 
 --HOUDINIMIMEBOUNDARY0xD3ADD339-0x00000F49-0x56B122C9-0x00000001HOUDINIMIMEBOUNDARY
 Content-Disposition: attachment; filename="hdaroot.net"
